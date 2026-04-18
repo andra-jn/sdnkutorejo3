@@ -500,43 +500,43 @@ body {
     box-shadow: 15px 15px 0 var(--emas);
 }
 
-/* Responsif */
+/* --- KODE RESPONSIF HP BERSIH (Mulai Baris 503) --- */
 @media (max-width: 768px) {
-    .misi-grid { grid-template-columns: 1fr; }
-}
+    /* Agar misi sekolah jadi satu kolom */
+    .misi-grid { 
+        grid-template-columns: 1fr !important; 
+    }
 
-/* KODE UNTUK MEMPERBAIKI TAMPILAN HP (RESPONSIVE) */
-@media (max-width: 768px) {
-    /* Membuat logo dan menu tidak bertabrakan */
+    /* Merapikan susunan navigasi (Logo di atas, Menu di bawah) */
     nav {
-        flex-direction: column; /* Menyusun ke bawah di HP */
-        padding: 10px;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 15px 10px !important;
     }
 
     .logo-container {
-        justify-content: center; /* Logo di tengah saat di HP */
-        margin-bottom: 10px;
+        justify-content: center !important;
+        margin-bottom: 12px !important;
+        width: 100% !important;
     }
 
-    .logo-container span {
-        font-size: 1rem !important; /* Mengecilkan teks nama sekolah sedikit */
-    }
-
-    .logo-container img {
-        height: 40px !important; /* Mengecilkan logo sedikit di HP */
-    }
-
-    /* Mengatur menu navigasi agar tidak berantakan */
+    /* Menu Navigasi agar tidak menumpuk dan mudah diklik */
     .nav-links {
-        display: flex;
-        flex-wrap: wrap; /* Supaya menu bisa turun ke bawah kalau tidak cukup */
-        justify-content: center;
-        gap: 10px;
-        font-size: 0.9rem;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        width: 100% !important;
     }
 
-    /* Mengatur judul besar di tengah agar tidak menutupi layar */
-    .hero h1 {
-        font-size: 1.8rem !important;
+    .nav-links a {
+        font-size: 14px !important;
+        padding: 5px 8px !important;
+    }
+
+    /* Merapikan teks utama agar tidak terlalu besar di layar HP */
+    .hero-content h1 {
+        font-size: 1.6rem !important;
+        line-height: 1.3 !important;
     }
 }
