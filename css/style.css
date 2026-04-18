@@ -500,43 +500,39 @@ body {
     box-shadow: 15px 15px 0 var(--emas);
 }
 
-/* --- KODE RESPONSIF HP BERSIH (Mulai Baris 503) --- */
 @media (max-width: 768px) {
-    /* Agar misi sekolah jadi satu kolom */
-    .misi-grid { 
-        grid-template-columns: 1fr !important; 
-    }
-
-    /* Merapikan susunan navigasi (Logo di atas, Menu di bawah) */
+    /* Membuat header fleksibel agar menu turun ke bawah logo */
     nav {
         flex-direction: column !important;
         height: auto !important;
         padding: 15px 10px !important;
+        gap: 15px !important;
     }
 
+    /* Memastikan Logo dan Nama tetap satu baris di tengah */
     .logo-container {
         justify-content: center !important;
-        margin-bottom: 12px !important;
         width: 100% !important;
     }
 
-    /* Menu Navigasi agar tidak menumpuk dan mudah diklik */
+    .logo-container span {
+        font-size: 1.1rem !important;
+        white-space: nowrap !important;
+    }
+
+    /* Membuat menu navigasi berjejer rapi di bawah logo */
     .nav-links {
-        display: flex !important;
-        flex-wrap: wrap !important;
         justify-content: center !important;
-        gap: 10px !important;
         width: 100% !important;
+        gap: 15px !important;
     }
 
     .nav-links a {
         font-size: 14px !important;
-        padding: 5px 8px !important;
     }
-
-    /* Merapikan teks utama agar tidak terlalu besar di layar HP */
+    
+    /* Ukuran teks hero agar lebih proporsional */
     .hero-content h1 {
         font-size: 1.6rem !important;
-        line-height: 1.3 !important;
     }
 }
