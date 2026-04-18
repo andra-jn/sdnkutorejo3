@@ -504,3 +504,39 @@ body {
 @media (max-width: 768px) {
     .misi-grid { grid-template-columns: 1fr; }
 }
+
+/* KODE UNTUK MEMPERBAIKI TAMPILAN HP (RESPONSIVE) */
+@media (max-width: 768px) {
+    /* Membuat logo dan menu tidak bertabrakan */
+    nav {
+        flex-direction: column; /* Menyusun ke bawah di HP */
+        padding: 10px;
+    }
+
+    .logo-container {
+        justify-content: center; /* Logo di tengah saat di HP */
+        margin-bottom: 10px;
+    }
+
+    .logo-container span {
+        font-size: 1rem !important; /* Mengecilkan teks nama sekolah sedikit */
+    }
+
+    .logo-container img {
+        height: 40px !important; /* Mengecilkan logo sedikit di HP */
+    }
+
+    /* Mengatur menu navigasi agar tidak berantakan */
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Supaya menu bisa turun ke bawah kalau tidak cukup */
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Mengatur judul besar di tengah agar tidak menutupi layar */
+    .hero h1 {
+        font-size: 1.8rem !important;
+    }
+}
