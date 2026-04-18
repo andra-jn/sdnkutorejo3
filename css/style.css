@@ -500,71 +500,62 @@ body {
     box-shadow: 15px 15px 0 var(--emas);
 }
 
-/* --- PERBAIKAN BERDASARKAN TAMPILAN HP ASLI --- */
+/* --- PERBAIKAN FINAL KHUSUS TAMPILAN HP --- */
 @media (max-width: 768px) {
-    /* 1. Header: Paksa tinggi otomatis agar tidak memotong isi */
-    header {
-        height: auto !important;
-        padding-bottom: 15px !important;
-    }
-
-    /* 2. Navigasi: Logo di atas, Menu di bawahnya (Vertikal) */
+    /* 1. Paksa navigasi menjadi tumpukan vertikal */
     nav {
         flex-direction: column !important;
         height: auto !important;
+        padding: 15px 10px !important;
         gap: 15px !important;
-        padding: 10px !important;
     }
 
-    /* 3. Nama Sekolah: Paksa lurus satu baris (Anti-Patah) */
+    /* 2. Menjaga Logo & Nama tetap di tengah */
     .logo-container {
         width: 100% !important;
         justify-content: center !important;
+        margin-bottom: 5px !important;
     }
 
     .logo-container span {
-        font-size: 1.1rem !important; /* Sedikit dikecilkan agar muat satu baris */
-        white-space: nowrap !important; /* INI KUNCINYA: Tulisan tidak akan patah ke bawah */
-        letter-spacing: 0px !important;
+        font-size: 1.1rem !important; /* Ukuran pas agar tidak patah */
+        white-space: nowrap !important;
     }
 
-    /* 4. Menu Navigasi: Berbaris rapi dan bisa turun baris jika penuh */
+    /* 3. Membuat menu berbaris rapi (Wrap) */
     .nav-links {
         display: flex !important;
-        flex-wrap: wrap !important;
+        flex-wrap: wrap !important; /* KUNCI: Menu akan turun baris jika tidak muat */
         justify-content: center !important;
         gap: 8px !important;
+        width: 100% !important;
     }
 
     .nav-links a {
         font-size: 12px !important;
-        padding: 5px 10px !important;
+        padding: 6px 12px !important;
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
+        border-radius: 20px; /* Membuat menu seperti kapsul */
     }
 
-    /* 5. Bagian Hero: Turunkan sedikit agar tidak tertutup Navbar */
+    /* 4. Mencegah konten Hero menabrak navbar */
     .hero-content {
-        margin-top: 40px !important;
+        margin-top: 50px !important;
+        padding: 0 15px !important;
     }
 
-    .hero-content h1 {
-        font-size: 1.3rem !important;
-        line-height: 1.2 !important;
-    }
-
-    /* 6. Tombol: Susun ke bawah (Vertikal) agar tidak tumpang tindih */
+    /* 5. MEMISAHKAN TOMBOL YANG TUMPANG TINDIH */
     .hero-buttons {
         display: flex !important;
-        flex-direction: column !important; /* Tombol jadi atas-bawah */
+        flex-direction: column !important; /* KUNCI: Tombol jadi atas-bawah */
+        gap: 15px !important; /* Memberi jarak antar tombol */
         align-items: center !important;
-        gap: 12px !important;
-        margin-top: 20px !important;
+        margin-top: 30px !important;
     }
 
-    .btn {
-        width: 85% !important; /* Tombol melebar agar mudah diklik jempol */
-        margin: 0 !important;
+    .hero-buttons .btn {
+        width: 80% !important; /* Membuat tombol lebih lebar di HP */
+        margin: 0 !important; /* Menghapus margin bawaan yang bikin geser */
         text-align: center !important;
     }
 }
