@@ -500,39 +500,65 @@ body {
     box-shadow: 15px 15px 0 var(--emas);
 }
 
+/* --- PERBAIKAN TOTAL LAYAR HP (360x740) --- */
 @media (max-width: 768px) {
-    /* Membuat header fleksibel agar menu turun ke bawah logo */
-    nav {
+    /* 1. Header & Nav: Wajib bertumpuk ke bawah (Vertical) */
+    header, nav {
         flex-direction: column !important;
-        height: auto !important;
-        padding: 15px 10px !important;
+        height: auto !important; /* Agar navbar bisa memanjang ke bawah */
+        padding: 20px 10px !important;
         gap: 15px !important;
+        text-align: center !important;
     }
 
-    /* Memastikan Logo dan Nama tetap satu baris di tengah */
+    /* 2. Logo: Di tengah atas */
     .logo-container {
+        display: flex !important;
         justify-content: center !important;
         width: 100% !important;
+        margin-bottom: 5px !important;
     }
 
     .logo-container span {
-        font-size: 1.1rem !important;
-        white-space: nowrap !important;
+        font-size: 1.2rem !important;
+        white-space: nowrap !important; /* Agar teks sekolah lurus satu baris */
     }
 
-    /* Membuat menu navigasi berjejer rapi di bawah logo */
+    /* 3. Link Navigasi: Muncul di bawah logo, tidak terpotong ke kanan */
     .nav-links {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Menu otomatis turun baris jika sempit */
         justify-content: center !important;
         width: 100% !important;
-        gap: 15px !important;
+        gap: 8px !important;
     }
 
     .nav-links a {
-        font-size: 14px !important;
+        font-size: 13px !important;
+        padding: 6px 10px !important;
+        background: rgba(255, 255, 255, 0.1); /* Biar terlihat seperti tombol */
+        border-radius: 5px;
     }
-    
-    /* Ukuran teks hero agar lebih proporsional */
+
+    /* 4. Hero Content: Agar teks "Selamat Datang" tidak naik ke atas navbar */
+    .hero {
+        padding-top: 180px !important; /* Memberi ruang agar teks tidak tertutup navbar */
+    }
+
     .hero-content h1 {
-        font-size: 1.6rem !important;
+        font-size: 1.4rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 5. Tombol Hero: Atas-Bawah (Vertical) */
+    .hero-buttons {
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: center !important;
+    }
+
+    .hero-buttons .btn {
+        width: 80% !important; /* Tombol jadi lebar di HP */
     }
 }
