@@ -500,47 +500,65 @@ body {
     box-shadow: 15px 15px 0 var(--emas);
 }
 
-/* --- PERBAIKAN TOTAL LAYAR HP (FINAL) --- */
 @media (max-width: 768px) {
-    /* 1. Header & Nav: Wajib bertumpuk ke bawah agar menu kelihatan */
-    header, nav {
-        flex-direction: column !important;
-        height: auto !important; 
-        padding: 15px 10px !important;
-        gap: 12px !important;
+    /* 1. Paksa Header agar bisa memanjang ke bawah */
+    header {
+        height: auto !important; /* Menghapus batasan tinggi */
+        min-height: 120px !important;
+        padding-bottom: 15px !important;
     }
 
-    /* 2. Menu Navigasi: Muncul di bawah logo, tidak tersembunyi ke samping */
+    /* 2. Susun Logo dan Menu secara Vertikal (Atas-Bawah) */
+    nav {
+        flex-direction: column !important; /* KUNCI agar menu turun ke bawah logo */
+        height: auto !important;
+        gap: 10px !important; /* Jarak antara Nama Sekolah dan Menu */
+        padding: 10px !important;
+        align-items: center !important;
+    }
+
+    /* 3. Merapikan Nama Sekolah */
+    .logo-container {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    .logo-container span {
+        font-size: 1.1rem !important;
+        white-space: nowrap !important;
+    }
+
+    /* 4. Memaksa Menu muncul tepat di bawah Nama Sekolah */
     .nav-links {
         display: flex !important;
-        flex-wrap: wrap !important;
+        flex-direction: row !important; /* Menu tetap sejajar samping selama muat */
+        flex-wrap: wrap !important; /* Jika penuh, otomatis turun baris */
         justify-content: center !important;
-        gap: 8px !important;
+        width: 100% !important;
+        gap: 10px !important;
+        margin: 0 !important; /* Menghapus jarak jauh yang Anda sebutkan */
     }
 
     .nav-links a {
         font-size: 12px !important;
-        padding: 5px 10px !important;
+        padding: 5px 12px !important;
+        background: rgba(255, 255, 255, 0.1); /* Kotak tipis agar terlihat seperti tombol */
+        border-radius: 4px;
     }
 
-    /* 3. Hero Content: Menurunkan teks agar tidak menabrak Navbar */
+    /* 5. Memberi ruang di bagian konten Hero agar tidak tertutup */
     .hero-content {
-        margin-top: 40px !important;
-        text-align: center !important;
+        margin-top: 60px !important; /* Menurunkan teks "Selamat Datang" */
     }
 
-    /* 4. TOMBOL: Ini kunci agar tidak tumpang tindih (Gambar Anda) */
+    /* 6. Memisahkan tombol Jelajahi & Video */
     .hero-buttons {
-        display: flex !important;
-        flex-direction: column !important; /* Tombol jadi Atas-Bawah */
-        gap: 15px !important; /* Jarak antar tombol */
+        flex-direction: column !important; /* Tombol jadi atas-bawah */
+        gap: 15px !important;
         align-items: center !important;
-        margin-top: 25px !important;
     }
 
-    .hero-buttons .btn {
-        width: 85% !important; /* Tombol lebih lebar agar mudah diklik di HP */
-        margin: 0 !important;
-        display: block !important;
+    .btn {
+        width: 80% !important;
     }
 }
